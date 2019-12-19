@@ -1,0 +1,52 @@
+.square-button {
+    -fx-max-width: 60;
+    -fx-min-width: 60;
+    -fx-min-height: 60;
+    -fx-max-height: 60;
+    -fx-fit-to-height: true;
+    -fx-fill-width: true;
+    /*-fx-background-color: grey;*/
+}
+
+.rectangle-button {
+    -fx-max-width: 60;
+    -fx-min-width: 60;
+    -fx-min-height: 40;
+    -fx-max-height: 40;
+}
+
+#playButton {
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-image: url("image/start.png");
+}
+
+/*#playButton:playImage{*/
+    /*-fx-background-image: url("image/start.png");*/
+/*}*/
+
+/*#playButton:playResetImage {*/
+    /*-fx-background-image: url("image/reset_play.png");*/
+/*}*/
+
+#resetButton {
+    -fx-background-image: url("image/reset.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+
+/*#forwardButton {*/
+    /*-fx-background-image: url("image/forward.png");*/
+    /*-fx-background-size: cover;*/
+    /*-fx-background-repeat: no-repeat;*/
+/*}*/
+
+/*#backButton {*/
+    /*-fx-background-image: url("image/back.png");*/
+    /*-fx-background-size: cover;*/
+    /*-fx-background-repeat: no-repeat;*/
+/*}*/
+
+.chart-bar {
+    -fx-bar-fill: red;
+}
