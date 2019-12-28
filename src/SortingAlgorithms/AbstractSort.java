@@ -8,14 +8,13 @@ import utils.ColorScheme;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.concurrent.CountDownLatch;
 
 public abstract class AbstractSort {
 
+    public TimeLineSortAnimation timeLineSortAnimationList;
     protected ObservableList<XYChart.Data<String, Double>> data;
     // for
     protected Double[] copy_data;
-    public TimeLineSortAnimation timeLineSortAnimationList;
     LinkedList<Integer[]> swaps;
     Queue<Integer> compareQueue;
     Queue<Integer> sortedQueue;
@@ -28,7 +27,7 @@ public abstract class AbstractSort {
 
     public AbstractSort(BarChart<String, Double> chart) {
         this.chart = chart;
-       reset();
+        reset();
     }
 
     // i > j ?
@@ -64,13 +63,13 @@ public abstract class AbstractSort {
 
 
     //circular shift
-    public void circularShiftRight(int i, int j){
+    public void circularShiftRight(int i, int j) {
 //        if (copy_data[j]  > copy_data.length) return;
         Double temp = copy_data[j].doubleValue();
-        for(int start = j-1; start >= i ; start --){
+        for (int start = j - 1; start >= i; start--) {
 //            System.out.println("Shift start: " + start + " to : " + i);
             copy_data[start + 1] = copy_data[start].doubleValue();
-            timeLineSortAnimationList.setValue(start+1, copy_data[start]);
+            timeLineSortAnimationList.setValue(start + 1, copy_data[start]);
 //            System.out.println(i+1 + " value: " + copy_data[i]);
         }
         copy_data[i] = temp;
@@ -99,7 +98,10 @@ public abstract class AbstractSort {
 //
 //        }
     }
-    public boolean isFinished(){return timeLineSortAnimationList.isFinished();}
+
+    public boolean isFinished() {
+        return timeLineSortAnimationList.isFinished();
+    }
 
 
     public void reset() {

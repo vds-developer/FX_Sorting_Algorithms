@@ -10,12 +10,12 @@ public class InsertionSort extends AbstractSort {
 
     @Override
     public void run() throws InterruptedException {
-        for(int toBeSortedIndex=0; toBeSortedIndex<copy_data.length; toBeSortedIndex++) {
+        for (int toBeSortedIndex = 0; toBeSortedIndex < copy_data.length; toBeSortedIndex++) {
 //            Double insertValue = copy_data[toBeSortedIndex];
             timeLineSortAnimationList.colorChange("purple", toBeSortedIndex);
-            for(int sortedIndex=0; sortedIndex<toBeSortedIndex ; sortedIndex++){
+            for (int sortedIndex = 0; sortedIndex < toBeSortedIndex; sortedIndex++) {
 //                }
-                if(!compare(sortedIndex, toBeSortedIndex)) {
+                if (!compare(sortedIndex, toBeSortedIndex)) {
                     System.out.println(sortedIndex + " " + toBeSortedIndex);
                     circularShiftRight(sortedIndex, toBeSortedIndex);
                     break;

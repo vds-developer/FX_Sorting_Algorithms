@@ -44,7 +44,7 @@ public class TimeLineSortAnimation {
     }
 
     public void colorChange(String color, int i) {
-       colorChange(color, i, colorSwitchDuration);
+        colorChange(color, i, colorSwitchDuration);
     }
 
     public void swapColorChange(String color, int i, int j, int duration) {
@@ -101,7 +101,7 @@ public class TimeLineSortAnimation {
 //        ));
 //    }
 
-    public void setValue(int i, Double value, double duration){
+    public void setValue(int i, Double value, double duration) {
         timelineList.add(new Timeline(
                 new KeyFrame(Duration.millis(duration),
                         event -> {
@@ -111,8 +111,8 @@ public class TimeLineSortAnimation {
         ));
     }
 
-    public void setValue(int i, Double value){
-     setValue(i, value, swapDuration);
+    public void setValue(int i, Double value) {
+        setValue(i, value, swapDuration);
     }
 
 
@@ -121,7 +121,9 @@ public class TimeLineSortAnimation {
         current++;
     }
 
-    public boolean isFinished() {return isFinished;}
+    public boolean isFinished() {
+        return isFinished;
+    }
 
 //    public void addFinish(){
 //        timelineList.add(new Timeline(
@@ -145,7 +147,6 @@ public class TimeLineSortAnimation {
             current.setOnFinished(e -> finalNext.play());
             current = finalNext;
         }
-
 
     }
 }

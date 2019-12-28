@@ -1,12 +1,8 @@
 package sample;
 
 import SortingAlgorithms.*;
-import javafx.beans.binding.Bindings;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.value.ObservableBooleanValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.css.PseudoClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
@@ -27,27 +23,17 @@ public class Controller {
     Label nSize;
     ObservableList<XYChart.Series<String, Double>> barChartData = FXCollections.observableArrayList();
     @FXML
+    Button resetButton;
+    @FXML
+    Menu sortAlgorithm;
+    @FXML
+    Label SortAlgorithmLabel;
+    @FXML
     private BarChart<String, Double> chart;
     @FXML
     private Button playButton;
-
-    @FXML Button resetButton;
-
-    @FXML
-    Menu sortAlgorithm;
-
-    @FXML
-    Label SortAlgorithmLabel;
-
-
     private boolean isSorted;
     private AbstractSort sort;
-
-
-
-    private enum SortAlgorithms {
-            INSERTION, BUBBLE, MAXSELECTION, MINSELECTION, MERGE
-    }
 
     @FXML
     public void sort() throws InterruptedException {
@@ -73,14 +59,12 @@ public class Controller {
         playButton.setDisable(false);
         initializeChart((int) Math.round(nSlider.getValue()));
 
-
     }
 
     @FXML
     public void forward() {
         System.out.println("Forward");
     }
-
 
     @FXML
     public void backward() {
@@ -108,7 +92,6 @@ public class Controller {
 //        playButton.pseudoClassStateChanged(resetPlay, isSorted);
     }
 
-
     private void initializeChart(int n) {
         chart.getData().clear();
         data.getData().clear();
@@ -119,16 +102,16 @@ public class Controller {
         playButton.setDisable(false);
     }
 
-    public AbstractSort setSortingAlgoritm(SortAlgorithms algo){
+    public AbstractSort setSortingAlgoritm(SortAlgorithms algo) {
         initializeChart(Integer.parseInt(nSize.getText()));
-        switch (algo){
+        switch (algo) {
             case INSERTION: {
                 chart.setTitle("Insertion Sort");
                 SortAlgorithmLabel.setText("Insertion Sort");
                 sort = new InsertionSort(chart);
                 break;
             }
-            case BUBBLE : {
+            case BUBBLE: {
                 chart.setTitle("Bubble Sort");
                 SortAlgorithmLabel.setText("Bubble Sort");
                 sort = new BubbleSort(chart);
@@ -168,8 +151,6 @@ public class Controller {
         return sort;
     }
 
-
-
     public void setBubbleSort(ActionEvent actionEvent) {
         setSortingAlgoritm(SortAlgorithms.BUBBLE);
 
@@ -187,6 +168,12 @@ public class Controller {
         setSortingAlgoritm(SortAlgorithms.MINSELECTION);
     }
 
-    public void setMergeSort(ActionEvent actionEvent) {setSortingAlgoritm(SortAlgorithms.MERGE);}
+    public void setMergeSort(ActionEvent actionEvent) {
+        setSortingAlgoritm(SortAlgorithms.MERGE);
+    }
+
+    private enum SortAlgorithms {
+        INSERTION, BUBBLE, MAXSELECTION, MINSELECTION, MERGE
+    }
 
 }
