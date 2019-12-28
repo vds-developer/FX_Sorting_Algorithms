@@ -64,13 +64,10 @@ public abstract class AbstractSort {
 
     //circular shift
     public void circularShiftRight(int i, int j) {
-//        if (copy_data[j]  > copy_data.length) return;
         Double temp = copy_data[j].doubleValue();
         for (int start = j - 1; start >= i; start--) {
-//            System.out.println("Shift start: " + start + " to : " + i);
             copy_data[start + 1] = copy_data[start].doubleValue();
             timeLineSortAnimationList.setValue(start + 1, copy_data[start]);
-//            System.out.println(i+1 + " value: " + copy_data[i]);
         }
         copy_data[i] = temp;
         timeLineSortAnimationList.setValue(i, temp);
@@ -93,10 +90,6 @@ public abstract class AbstractSort {
 
     public void autoPlay() {
         timeLineSortAnimationList.autoPlay();
-//        CountDownLatch latch = new CountDownLatch(1);
-//        while (!timeLineSortAnimationList.isFinished()){
-//
-//        }
     }
 
     public boolean isFinished() {
@@ -107,7 +100,6 @@ public abstract class AbstractSort {
     public void reset() {
         this.compareQueue = new LinkedList<>();
         this.sortedQueue = new LinkedList<>();
-//        System.out.println("Starting size " + compareQueue.size());
         this.timeLineSortAnimationList = new TimeLineSortAnimation(chart);
         this.data = chart.getData().get(0).getData();
         this.copy_data = new Double[data.size()];

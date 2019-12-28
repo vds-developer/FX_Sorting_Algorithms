@@ -32,17 +32,10 @@ public class Controller {
     private BarChart<String, Double> chart;
     @FXML
     private Button playButton;
-    private boolean isSorted;
     private AbstractSort sort;
 
     @FXML
     public void sort() throws InterruptedException {
-        System.out.println("Sort");
-//        sort = new BubbleSort(chart);
-//        sort = new MinSelectionSort(chart);
-//        sort = new MaxSelectionSort(chart);
-//        sort = new InsertionSort(chart);
-//        sort.circularShiftRight(4, 5);
         sort.reset();
         sort.run();
         playButton.setDisable(false);
@@ -50,7 +43,6 @@ public class Controller {
         sort.autoPlay();
         playButton.setDisable(true);
         resetButton.setDisable(false);
-        isSorted = true;
     }
 
     @FXML
@@ -73,10 +65,6 @@ public class Controller {
 
     @FXML
     public void initialize() throws InterruptedException {
-        System.out.println("Success");
-//        playButton.setStyle("-fx-background-image: url('css/image/start.png');");
-//        playButton.disableProperty().bind(new SimpleBooleanProperty(true) );
-//        resetButton.disableProperty().bind(new SimpleBooleanProperty(false) );
         nSize.setText(Integer.toString((int) Math.round(nSlider.getValue())));
         nSlider.valueProperty().addListener((observable, oldValue, newValue)
                         -> {
@@ -85,11 +73,6 @@ public class Controller {
                 }
         );
         setSortingAlgoritm(SortAlgorithms.BUBBLE);
-        isSorted = false;
-//        PseudoClass play = PseudoClass.getPseudoClass("playImage");
-//        PseudoClass resetPlay = PseudoClass.getPseudoClass("resetPlayImage");
-//        playButton.pseudoClassStateChanged(play, !isSorted);
-//        playButton.pseudoClassStateChanged(resetPlay, isSorted);
     }
 
     private void initializeChart(int n) {
@@ -135,6 +118,12 @@ public class Controller {
                 sort = new MergeSort(chart);
                 break;
             }
+            case COCKTAILSHAKER: {
+                chart.setTitle("Cocktail Shaker Sort");
+                SortAlgorithmLabel.setText("Cocktail Shaker Sort");
+                sort = new CocktailShakerSort(chart);
+                break;
+            }
             default: {
                 chart.setTitle("Insertion Sort");
                 SortAlgorithmLabel.setText("Insertion Sort");
@@ -142,12 +131,6 @@ public class Controller {
                 break;
             }
         }
-
-//        try {
-//            sort.run();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
         return sort;
     }
 
@@ -172,8 +155,12 @@ public class Controller {
         setSortingAlgoritm(SortAlgorithms.MERGE);
     }
 
+    public void setCocktailShakerSort(ActionEvent actionEvent) {
+        setSortingAlgoritm(SortAlgorithms.COCKTAILSHAKER);
+    }
+
     private enum SortAlgorithms {
-        INSERTION, BUBBLE, MAXSELECTION, MINSELECTION, MERGE
+        INSERTION, BUBBLE, MAXSELECTION, MINSELECTION, MERGE, COCKTAILSHAKER
     }
 
 }

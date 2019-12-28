@@ -6,7 +6,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import java.net.URL?>
-<SplitPane xmlns:fx="http://javafx.com/fxml/1" dividerPositions="0.34673366834170855" maxHeight="-Infinity" maxWidth="-Infinity"
+<SplitPane xmlns:fx="http://javafx.com/fxml/1" dividerPositions="0.34673366834170855" maxHeight="-Infinity"
+           maxWidth="-Infinity"
            minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0"
            prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121"
            fx:controller="sample.Controller">
@@ -37,6 +38,10 @@
                             </items>
                             <items>
                                 <MenuItem mnemonicParsing="false" onAction="#setMergeSort" text="Merge Sort"/>
+                            </items>
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#setCocktailShakerSort"
+                                          text="Cocktail Shaker Sort"/>
                             </items>
                         </Menu>
                     </menus>
