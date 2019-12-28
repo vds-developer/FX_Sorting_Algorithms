@@ -37,6 +37,9 @@
                             <items>
                                 <MenuItem mnemonicParsing="false" onAction="#setMinSelectionSort" text="Min Selection Sort" />
                             </items>
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#setMergeSort" text="Merge Sort" />
+                            </items>
                         </Menu>
                     </menus>
                 </MenuBar>

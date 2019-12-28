@@ -20,6 +20,14 @@ public class RandomArrayGenerator {
         return data;
     }
 
+//    public static double[] generatePrimitiveDouble(int n) {
+//        double[] data = new double[n];
+//        for (int i = 0; i < n; i++) {
+//            data[i] = rand.nextDouble() * maxInteger + minInteger;
+//        }
+//        return data;
+//    }
+
 
     public static List<XYChart.Data<String, Double>> generateData(int n) {
         List<XYChart.Data<String, Double>> data = new LinkedList<>();

@@ -28,13 +28,7 @@ public abstract class AbstractSort {
 
     public AbstractSort(BarChart<String, Double> chart) {
         this.chart = chart;
-        this.compareQueue = new LinkedList<>();
-        this.sortedQueue = new LinkedList<>();
-        System.out.println("Starting size " + compareQueue.size());
-        this.timeLineSortAnimationList = new TimeLineSortAnimation(chart);
-        this.data = chart.getData().get(0).getData();
-        this.copy_data = new Double[data.size()];
-        data.forEach(x -> copy_data[Integer.parseInt(x.getXValue())] = x.getYValue());
+       reset();
     }
 
     // i > j ?
@@ -47,15 +41,12 @@ public abstract class AbstractSort {
     }
 
 
-
     public void setSorted(int i) {
         sortedQueue.add(i);
         timeLineSortAnimationList.colorChange(ColorScheme.sortedColor, i);
     }
 
     public void removeAllComparisons() {
-        // dont want to change back the sortedQueue
-//        compareQueue.removeAll(sortedQueue);
         timeLineSortAnimationList.colorChange(ColorScheme.defaultColor, compareQueue);
     }
 
@@ -64,6 +55,11 @@ public abstract class AbstractSort {
         Double temp = copy_data[i];
         copy_data[i] = copy_data[j];
         copy_data[j] = temp;
+    }
+
+    public void setValue(int index, double value) {
+        copy_data[index] = value;
+        timeLineSortAnimationList.setValue(index, value);
     }
 
 
@@ -107,10 +103,9 @@ public abstract class AbstractSort {
 
 
     public void reset() {
-        this.chart = chart;
         this.compareQueue = new LinkedList<>();
         this.sortedQueue = new LinkedList<>();
-        System.out.println("Starting size " + compareQueue.size());
+//        System.out.println("Starting size " + compareQueue.size());
         this.timeLineSortAnimationList = new TimeLineSortAnimation(chart);
         this.data = chart.getData().get(0).getData();
         this.copy_data = new Double[data.size()];

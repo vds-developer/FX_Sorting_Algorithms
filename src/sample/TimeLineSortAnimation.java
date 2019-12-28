@@ -123,17 +123,17 @@ public class TimeLineSortAnimation {
 
     public boolean isFinished() {return isFinished;}
 
-    public void addFinish(){
-        timelineList.add(new Timeline(
-                new KeyFrame( Duration.millis(0),
-                        event -> {
-                            isFinished = true;
-                        }
-                )));
-    }
+//    public void addFinish(){
+//        timelineList.add(new Timeline(
+//                new KeyFrame( Duration.millis(0),
+//                        event -> {
+//                            isFinished = true;
+//                        }
+//                )));
+//    }
 
     public void autoPlay() {
-        addFinish();
+//        addFinish();
         Iterator<Timeline> iterator = timelineList.iterator();
         Timeline current = iterator.next();
         Timeline next;

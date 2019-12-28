@@ -46,7 +46,7 @@ public class Controller {
 
 
     private enum SortAlgorithms {
-            INSERTION, BUBBLE, MAXSELECTION, MINSELECTION,
+            INSERTION, BUBBLE, MAXSELECTION, MINSELECTION, MERGE
     }
 
     @FXML
@@ -71,8 +71,8 @@ public class Controller {
     public void reset() {
         resetButton.setDisable(true);
         playButton.setDisable(false);
-
         initializeChart((int) Math.round(nSlider.getValue()));
+
 
     }
 
@@ -146,6 +146,18 @@ public class Controller {
                 sort = new MinSelectionSort(chart);
                 break;
             }
+            case MERGE: {
+                chart.setTitle("Merge Sort");
+                SortAlgorithmLabel.setText("Merge Sort");
+                sort = new MergeSort(chart);
+                break;
+            }
+            default: {
+                chart.setTitle("Insertion Sort");
+                SortAlgorithmLabel.setText("Insertion Sort");
+                sort = new InsertionSort(chart);
+                break;
+            }
         }
 
 //        try {
@@ -174,5 +186,7 @@ public class Controller {
     public void setMinSelectionSort(ActionEvent actionEvent) {
         setSortingAlgoritm(SortAlgorithms.MINSELECTION);
     }
+
+    public void setMergeSort(ActionEvent actionEvent) {setSortingAlgoritm(SortAlgorithms.MERGE);}
 
 }
