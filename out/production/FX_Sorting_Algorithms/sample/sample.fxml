@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.Slider?>
-<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
-
-<SplitPane dividerPositions="0.34673366834170855" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<?import java.net.URL?>
+<SplitPane xmlns:fx="http://javafx.com/fxml/1" dividerPositions="0.34673366834170855" maxHeight="-Infinity"
+           maxWidth="-Infinity"
+           minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0"
+           prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121"
+           fx:controller="sample.Controller">
     <items>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="137.0" prefWidth="598.0">
             <children>
@@ -21,36 +18,46 @@
                     <menus>
                         <Menu mnemonicParsing="false" text="File">
                             <items>
-                                <MenuItem mnemonicParsing="false" text="Close" />
+                                <MenuItem mnemonicParsing="false" text="Close"/>
                             </items>
                         </Menu>
                         <Menu fx:id="sortAlgorithm" mnemonicParsing="false" text="Sorting Algorithm">
                             <items>
-                                <MenuItem mnemonicParsing="false" onAction="#setBubbleSort" text="Bubble Sort" />
+                                <MenuItem mnemonicParsing="false" onAction="#setBubbleSort" text="Bubble Sort"/>
                             </items>
                             <items>
-                                <MenuItem mnemonicParsing="false" onAction="#setInsertionSort" text="Insertion Sort" />
+                                <MenuItem mnemonicParsing="false" onAction="#setInsertionSort" text="Insertion Sort"/>
                             </items>
                             <items>
-                                <MenuItem mnemonicParsing="false" onAction="#setMaxSelectionSort" text="Max Selection Sort" />
+                                <MenuItem mnemonicParsing="false" onAction="#setMaxSelectionSort"
+                                          text="Max Selection Sort"/>
                             </items>
                             <items>
-                                <MenuItem mnemonicParsing="false" onAction="#setMinSelectionSort" text="Min Selection Sort" />
+                                <MenuItem mnemonicParsing="false" onAction="#setMinSelectionSort"
+                                          text="Min Selection Sort"/>
                             </items>
                             <items>
-                                <MenuItem mnemonicParsing="false" onAction="#setMergeSort" text="Merge Sort" />
+                                <MenuItem mnemonicParsing="false" onAction="#setMergeSort" text="Merge Sort"/>
+                            </items>
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#setCocktailShakerSort"
+                                          text="Cocktail Shaker Sort"/>
                             </items>
                         </Menu>
                     </menus>
                 </MenuBar>
-                <Slider fx:id="nSlider" blockIncrement="1.0" cache="true" layoutX="14.0" layoutY="100.0" majorTickUnit="1.0" max="100" min="5" snapToTicks="true" value="10" valueChanging="true" />
-                <Label layoutX="14.0" layoutY="75.0" prefHeight="25.0" prefWidth="28.0" text="N = " />
-                <Label fx:id="nSize" layoutX="42.0" layoutY="75.0" prefHeight="25.0" prefWidth="101.0" />
-                <Button fx:id="playButton" layoutX="183.0" layoutY="58.0" onMouseClicked="#sort" styleClass="square-button" textOverrun="CLIP">
+                <Slider fx:id="nSlider" blockIncrement="1.0" cache="true" layoutX="14.0" layoutY="100.0"
+                        majorTickUnit="1.0" max="100" min="5" snapToTicks="true" value="10" valueChanging="true"/>
+                <Label layoutX="14.0" layoutY="75.0" prefHeight="25.0" prefWidth="28.0" text="N = "/>
+                <Label fx:id="nSize" layoutX="42.0" layoutY="75.0" prefHeight="25.0" prefWidth="101.0"/>
+                <Button fx:id="playButton" layoutX="183.0" layoutY="58.0" onMouseClicked="#sort"
+                        styleClass="square-button" textOverrun="CLIP">
                 </Button>
 
-                <Button fx:id="resetButton" layoutX="335.0" layoutY="58.0" maxWidth="83.0" onMouseClicked="#reset" prefHeight="70.0" prefWidth="83.0" styleClass="square-button" textOverrun="CLIP" />
-            <Label fx:id="SortAlgorithmLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="27.0" prefHeight="49.0" prefWidth="262.0" text="Label" />
+                <Button fx:id="resetButton" layoutX="335.0" layoutY="58.0" maxWidth="83.0" onMouseClicked="#reset"
+                        prefHeight="70.0" prefWidth="83.0" styleClass="square-button" textOverrun="CLIP"/>
+                <Label fx:id="SortAlgorithmLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0"
+                       layoutY="27.0" prefHeight="49.0" prefWidth="262.0" text="Label"/>
 
                 <!--<Button fx:id="backButton" layoutX="352.0" layoutY="80.0" onMouseClicked="#backward" styleClass="rectangle-button" />-->
                 <!--<Button fx:id="forwardButton" layoutX="434.0" layoutY="80.0" onMouseClicked="#forward" styleClass="rectangle-button" />-->
@@ -61,12 +68,15 @@
         </AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
             <children>
-                <BarChart fx:id="chart" alternativeRowFillVisible="false" animated="false" barGap="0" categoryGap="0.0" centerShape="false" horizontalGridLinesVisible="false" legendVisible="false" prefHeight="259.0" prefWidth="600.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                <BarChart fx:id="chart" alternativeRowFillVisible="false" animated="false" barGap="0" categoryGap="0.0"
+                          centerShape="false" horizontalGridLinesVisible="false" legendVisible="false"
+                          prefHeight="259.0" prefWidth="600.0" verticalGridLinesVisible="false"
+                          verticalZeroLineVisible="false">
                     <xAxis>
-                        <CategoryAxis side="BOTTOM" tickLabelsVisible="false" visible="false" fx:id="xAxis" />
+                        <CategoryAxis side="BOTTOM" tickLabelsVisible="false" visible="false" fx:id="xAxis"/>
                     </xAxis>
                     <yAxis>
-                        <NumberAxis fx:id="yAxis" forceZeroInRange="true" side="LEFT" tickUnit="1.0" visible="false" />
+                        <NumberAxis fx:id="yAxis" forceZeroInRange="true" side="LEFT" tickUnit="1.0" visible="false"/>
                     </yAxis>
                     <!--<opaqueInsets>-->
                     <!--<Insets />-->
@@ -74,9 +84,9 @@
                 </BarChart>
             </children>
         </AnchorPane>
-          <!--<Label fx:id="Title" alignment="CENTER" prefHeight="36.0" prefWidth="181.0" text="Sort algorithm" textAlignment="CENTER" />-->
+        <!--<Label fx:id="Title" alignment="CENTER" prefHeight="36.0" prefWidth="181.0" text="Sort algorithm" textAlignment="CENTER" />-->
     </items>
     <stylesheets>
-        <URL value="@css/main.css" />
+        <URL value="@css/main.css"/>
     </stylesheets>
 </SplitPane>

@@ -22,11 +22,11 @@
 }
 
 /*#playButton:playImage{*/
-    /*-fx-background-image: url("image/start.png");*/
+/*-fx-background-image: url("image/start.png");*/
 /*}*/
 
 /*#playButton:playResetImage {*/
-    /*-fx-background-image: url("image/reset_play.png");*/
+/*-fx-background-image: url("image/reset_play.png");*/
 /*}*/
 
 #resetButton {
@@ -36,15 +36,15 @@
 }
 
 /*#forwardButton {*/
-    /*-fx-background-image: url("image/forward.png");*/
-    /*-fx-background-size: cover;*/
-    /*-fx-background-repeat: no-repeat;*/
+/*-fx-background-image: url("image/forward.png");*/
+/*-fx-background-size: cover;*/
+/*-fx-background-repeat: no-repeat;*/
 /*}*/
 
 /*#backButton {*/
-    /*-fx-background-image: url("image/back.png");*/
-    /*-fx-background-size: cover;*/
-    /*-fx-background-repeat: no-repeat;*/
+/*-fx-background-image: url("image/back.png");*/
+/*-fx-background-size: cover;*/
+/*-fx-background-repeat: no-repeat;*/
 /*}*/
 
 .chart-bar {
