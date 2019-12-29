@@ -9,10 +9,10 @@ The purpose of this repo is to visualize the following sorting algorithms
 
 ## Sorting Algorithms
 
-#bubble sort
 # Bubble Sort
+The big O is O(n^2). More information can be found in [Bubble Sort](#https://www.geeksforgeeks.org/bubble-sort/)
 ![Bubble sort gif](/resource/bubble.gif)
 
-#cocktail shaker sort
-#Cocktail Shaker Sort
+
+# Cocktail Shaker Sort
 ![Cocktail Shaker Sort](/resource/cocktailShaker.gif)
