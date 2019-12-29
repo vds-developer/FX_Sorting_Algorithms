@@ -21,11 +21,15 @@ The time complexity is  O(n^2) and space complexity is O(1). More information ca
 # Insertion Sort
 The time complexity is O(n^2) and space complexity is O(1). More information can be found in [Insertion Sort](https://www.geeksforgeeks.org/insertion-sort/)
 
-Max Insertion
-![Max Insertion](/resource/maxInsertion.gif)
+# Min Selection Sort
+The time complexity is (n^2) and space complexity is O(1). More information can be found in [Min Selection](https://www.geeksforgeeks.org/selection-sort/)
+![min Selection](/resource/minSelection.gif)
 
-Min Insertion
-![min Insertion](/resource/minInsertion.gif)
+# Max Selection Sort
+Same as min selection but selecting the max element at each iteration
+![Max Selection](/resource/maxSelection.gif)
+
+
 
 # Merge Sort
 The time complexity is O(nlogn) and space complexity is O(n). More inforamtion can be found in [Merge Sort](https://www.geeksforgeeks.org/merge-sort/)
